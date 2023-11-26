@@ -4,7 +4,6 @@ const libre = require('libreoffice-convert');
 libre.convertAsync = require('util').promisify(libre.convert);
 
 async function convertToPDF(file) {
-    let loading = false;
     const ext = '.pdf';
     const inputPath = path.join(__dirname, `uploads/${file.filename}`);
     const outputPath = path.join(__dirname, `public/${path.parse(file.originalname).name}${ext}`);
