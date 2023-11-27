@@ -18,7 +18,7 @@ async function convertToPDF(file) {
     await fs.writeFile(outputPath, pdfBuf);
 }
 
-convertToPDF().catch(function (err) {
+convertToPDF().then((res)=>{console.log("No error", res)}).catch(function (err) {
     console.log(`Error converting file: ${err}`);
 });
 
